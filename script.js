@@ -61,3 +61,11 @@ const team = [
 ];
 
 
+// Itera attraverso l'array e stampa chi ha un animale domestico e il nome dell'animale
+for (let persona of team) {
+    if (persona.petName && persona.petName !== "Impossibile scegliere") {
+        console.log(`${persona.name} ${persona.surname} ha un animale domestico di nome ${persona.petName}.`);
+    } else {
+        console.log(`${persona.name} ${persona.surname} non ha un animale domestico.`);
+    }
+}
