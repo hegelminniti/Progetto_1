@@ -60,4 +60,11 @@ const team = [
     }
 ];
 
+// Martina: 'Print the team middle age'
+function middleAge(array) {
+  let sumAge = array.reduce((a, num) => a + num.age, 0);
+  let avgAge = sumAge / array.length;
+  return avgAge;
+};
 
+console.log(middleAge(team));
