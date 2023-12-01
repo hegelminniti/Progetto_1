@@ -9,8 +9,8 @@ const team = [
         favoriteFilm: "Sette anime",
         favoriteBook: "Nessuno si salva da solo",
         petName: "Ginger, Yuki, Reneé, Ciccio",
-      },
-      {
+    },
+    {
         name: "Martina",
         surname: "Mancuso",
         age: 32,
@@ -21,8 +21,8 @@ const team = [
         favoriteFilm: "mamma mia",
         favoriteBook: "solo bagaglio a mano",
         petName: "Neve",
-      },
-      {
+    },
+    {
         name: "Alessandro",
         surname: "Vaccaro",
         age: 31,
@@ -33,8 +33,8 @@ const team = [
         favoriteFilm: "Il Miglio Verde",
         favoriteBook: "Il Ciclo dell'Odio",
         petName: "Giorgio",
-      },
-      {
+    },
+    {
         name: "Giampiero",
         surname: "Franconieri",
         age: 25,
@@ -45,5 +45,19 @@ const team = [
         favoriteFilm: "Il buono, il brutto e il cattivo",
         favoriteBook: "",
         petName: ""
-        },
+    },
+    {
+        name: "Davide",
+        surname: "Lodde",
+        age: 30,
+        city: "Cagliari, Sardegna",
+        hobby: "Development",
+        favoriteFood: "Impossibile scegliere",
+        favoriteVideoGame: "Impossibile scegliere",
+        favoriteFilm: "Impossibile scegliere",
+        favoriteBook: "Impossibile scegliere",
+        petName: "Impossibile scegliere"
+    }
 ];
+
+
