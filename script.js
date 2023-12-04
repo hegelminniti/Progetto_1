@@ -1,10 +1,20 @@
+/*
+- Print the team in alphabetical order (surname name).
+- Print the team in age order (name age).
+- Print the team middle age.
+- Print who has a pet (name petName).
+- Print who wrote ‘LOL’ or ‘League Of Legends’ as a favorite video game. (name).
+- Print if there are some members with the same name (name).
+*/
+
 const team = [
     {
         name: "Hegel",
         surname: "Minniti",
         age: 23,
+        city: "Gioia Tauro",
         hobby: "Musica, videogames",
-        favoriteFood: "Impossibile scegliere",
+        favoriteFood: "",
         favoriteVideoGame: "Palia",
         favoriteFilm: "Sette anime",
         favoriteBook: "Nessuno si salva da solo",
@@ -52,12 +62,85 @@ const team = [
         age: 30,
         city: "Cagliari, Sardegna",
         hobby: "Development",
-        favoriteFood: "Impossibile scegliere",
-        favoriteVideoGame: "Impossibile scegliere",
-        favoriteFilm: "Impossibile scegliere",
-        favoriteBook: "Impossibile scegliere",
-        petName: "Impossibile scegliere"
+        favoriteFood: "",
+        favoriteVideoGame: "",
+        favoriteFilm: "",
+        favoriteBook: "",
+        petName: ""
     }
 ];
+
+function ageSort(array) { // Funzione sorting decrescente di età (ALESSANDRO)
+  let sortedAges = array.sort(
+      (p1, p2) => (p1.age < p2.age) ? 1 : (p1.age > p2.age) ? -1 : 0);
+      
+  return sortedAges;
+}
+
+function surnameSort(array) { // Funzione di sorting descrescente per cognome (ALESSANDRO)
+  array.sort(function(a,b){
+      const nameA = a.surname.toUpperCase(); // ignore upper and lowercase
+      const nameB = b.surname.toUpperCase(); // ignore upper and lowercase
+      if (nameA > nameB) {
+          return -1;
+      }
+      if (nameA < nameB) {
+          return 1;
+      }
+  });
+  return array;
+}
+
+// Martina: 'Print the team middle age'
+function middleAge(array) {
+  let sumAge = array.reduce((a, num) => a + num.age, 0);
+  let avgAge = sumAge / array.length;
+  return avgAge;
+};
+
+let ageArray = ageSort(team.slice(0))
+let sortedName = surnameSort(team)
+
+for(let i=0; i < sortedName.length; i++){ // print Surname - Name in ordine Alfabetico per cognome
+  console.log(`Surname : ${sortedName[i].surname} , Name : ${sortedName[i].name}`);
+}
+
+for(let i=0; i < ageArray.length; i++ ){ // print Name - Age in ordine di età
+  console.log(`Name : ${ageArray[i].name}, Age : ${ageArray[i].age}`);
+}
+
+console.log(middleAge(team));
+
+// funzione Davide
+
+// Itera attraverso l'array e stampa chi ha un animale domestico e il nome dell'animale
+for (let persona of team) {
+  if (persona.petName && persona.petName !== "Impossibile scegliere") {
+      console.log(`${persona.name} ${persona.surname} ha un animale domestico di nome ${persona.petName}.`);
+  } else {
+      console.log(`${persona.name} ${persona.surname} non ha un animale domestico.`);
+  }
+}
+
+// funzione Hegel
+// Print who wrote ‘LOL’ or ‘League Of Legends’ as a favorite video game. (name).
+
+function favGame(array) {
+  const lolPlayers = array
+    .filter(
+      (member) =>
+        member.favoriteVideoGame.toLowerCase() === "lol" ||
+        member.favoriteVideoGame.toLowerCase() === "league of legends"
+    )
+    .map((member) => member.name);
+
+  if (lolPlayers.length === 0) {
+    console.log("Nessuno ha scelto come gioco preferito League of Legends.");
+  } else {
+    console.log(lolPlayers);
+  }
+}
+
+favGame(team);
 
 
