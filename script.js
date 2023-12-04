@@ -12,8 +12,9 @@ const team = [
         name: "Hegel",
         surname: "Minniti",
         age: 23,
+        city: "Gioia Tauro",
         hobby: "Musica, videogames",
-        favoriteFood: "Impossibile scegliere",
+        favoriteFood: "",
         favoriteVideoGame: "Palia",
         favoriteFilm: "Sette anime",
         favoriteBook: "Nessuno si salva da solo",
@@ -61,11 +62,11 @@ const team = [
         age: 30,
         city: "Cagliari, Sardegna",
         hobby: "Development",
-        favoriteFood: "Impossibile scegliere",
-        favoriteVideoGame: "Impossibile scegliere",
-        favoriteFilm: "Impossibile scegliere",
-        favoriteBook: "Impossibile scegliere",
-        petName: "Impossibile scegliere"
+        favoriteFood: "",
+        favoriteVideoGame: "",
+        favoriteFilm: "",
+        favoriteBook: "",
+        petName: ""
     }
 ];
 
