@@ -60,20 +60,4 @@ const team = [
   },
 ];
 
-function favGame(array) {
-  const lolPlayers = array
-    .filter(
-      (member) =>
-        member.favoriteVideoGame.toLowerCase() === "lol" ||
-        member.favoriteVideoGame.toLowerCase() === "league of legends"
-    )
-    .map((member) => member.name);
 
-  if (lolPlayers.length === 0) {
-    console.log("Nessuno ha scelto come gioco preferito League of Legends.");
-  } else {
-    console.log(lolPlayers);
-  }
-}
-
-favGame(team);
