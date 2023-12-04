@@ -78,15 +78,7 @@ function sameName(array){
                 egualName[x]=nomi[i];//salvataggio nomi duplicati
                 x++;
             }
-    for(let i in egualName)
-        for(let j in egualName)
-        {
-            if((egualName[i]==egualName[j])&& (i!=j))//metodo per togliere eventualmente nomi duplicati per non stamparli più volte
-            {
-                egualName.splice(i,1);
-            }
-        } 
-        
+    egualName= [...new Set (egualName)];// elimino nomi duplicati per non stamparli più volte
     if(egualName[0])   //verifico esistenza di nomi duplicati    
         console.log(egualName);//stampo nomi duplicati
     else console.log("Nessun utente con lo stesso nome.");//se non ci sono doppi nomi rifesrisco quanto scritto.
