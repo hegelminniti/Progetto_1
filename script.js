@@ -98,30 +98,6 @@ function middleAge(array) {
   return avgAge;
 };
 
-let ageArray = ageSort(team.slice(0))
-let sortedName = surnameSort(team)
-
-for(let i=0; i < sortedName.length; i++){ // print Surname - Name in ordine Alfabetico per cognome
-  console.log(`Surname : ${sortedName[i].surname} , Name : ${sortedName[i].name}`);
-}
-
-for(let i=0; i < ageArray.length; i++ ){ // print Name - Age in ordine di età
-  console.log(`Name : ${ageArray[i].name}, Age : ${ageArray[i].age}`);
-}
-
-console.log(middleAge(team));
-
-// funzione Davide
-
-// Itera attraverso l'array e stampa chi ha un animale domestico e il nome dell'animale
-for (let persona of team) {
-  if (persona.petName && persona.petName !== "Impossibile scegliere") {
-      console.log(`${persona.name} ${persona.surname} ha un animale domestico di nome ${persona.petName}.`);
-  } else {
-      console.log(`${persona.name} ${persona.surname} non ha un animale domestico.`);
-  }
-}
-
 // funzione Hegel
 // Print who wrote ‘LOL’ or ‘League Of Legends’ as a favorite video game. (name).
 
@@ -140,7 +116,52 @@ function favGame(array) {
     console.log(lolPlayers);
   }
 }
+// Giampiero Franconieri
+// Print if there are some members with the same name (name)
+// Stampa se ci sono membri con lo stesso nome (nome)
+function sameName(array){
+    let nomi=[];//variabile contenti solo i nomi degli oggetti
+    array.forEach((user,i) => {//metodo per trasferire i nomi degli utenti
+        nomi[i]=user.name;
+    });
+    let x=0//indice di egualName
+    let egualName=[];//array contenenti i nomi duplicati
+    for(let i in nomi)
+        for(let j in nomi)// doppio for per iterare tutte le combinazioni nome:nome
+            if((nomi[i]==nomi[j])&& (i!=j)) //controllo se ci sono nomi duplicati evitando di 'controllare se stesso'
+            {
+                egualName[x]=nomi[i];//salvataggio nomi duplicati
+                x++;
+            }
+    egualName= [...new Set (egualName)];// elimino nomi duplicati per non stamparli più volte
+    if(egualName[0])   //verifico esistenza di nomi duplicati    
+        console.log(egualName);//stampo nomi duplicati
+    else console.log("Nessun utente con lo stesso nome.");//se non ci sono doppi nomi rifesrisco quanto scritto.
+}
+let ageArray = ageSort(team.slice(0))
+let sortedName = surnameSort(team)
+/*------MAIN------*/
+for(let i=0; i < sortedName.length; i++){ // print Surname - Name in ordine Alfabetico per cognome
+  console.log(`Surname : ${sortedName[i].surname} , Name : ${sortedName[i].name}`);
+}
+
+for(let i=0; i < ageArray.length; i++ ){ // print Name - Age in ordine di età
+  console.log(`Name : ${ageArray[i].name}, Age : ${ageArray[i].age}`);
+}
+
+console.log(middleAge(team));
+
+// funzione Davide
+
+// Itera attraverso l'array e stampa chi ha un animale domestico e il nome dell'animale
+for (let persona of team) {
+    if (persona.petName && persona.petName !== "Impossibile scegliere") {
+        console.log(`${persona.name} ${persona.surname} ha un animale domestico di nome ${persona.petName}.`);
+    } else {
+        console.log(`${persona.name} ${persona.surname} non ha un animale domestico.`);
+    }
+  }
 
 favGame(team);
 
-
+sameName(team);
