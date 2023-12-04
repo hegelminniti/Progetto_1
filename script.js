@@ -52,11 +52,11 @@ const team = [
         age: 30,
         city: "Cagliari, Sardegna",
         hobby: "Development",
-        favoriteFood: "Impossibile scegliere",
-        favoriteVideoGame: "Impossibile scegliere",
-        favoriteFilm: "Impossibile scegliere",
-        favoriteBook: "Impossibile scegliere",
-        petName: "Impossibile scegliere"
+        favoriteFood: "",
+        favoriteVideoGame: "",
+        favoriteFilm: "",
+        favoriteBook: "",
+        petName: ""
     }
 ];
 
